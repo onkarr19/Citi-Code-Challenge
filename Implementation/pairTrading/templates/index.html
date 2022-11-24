@@ -131,18 +131,18 @@
 
         <div class="hideme">
             <h1>Analysis of {{ a }} & {{ b }}</h1>
-            <h3>{{ current }}</h3>
+            <h3>{{ current|floatformat:2 }}</h3>
         </div>
     </div>
 
 
     <div class="hideme">
         <div id="mission">
-            <img src="{% static 'img1.jpg' %}" class="center4"><br>
-            <img src="{% static 'img2.jpg' %}" class="center4"><br>
-            <img src="{% static 'img3.jpg' %}" class="center4"><br>
-            <img src="{% static 'img4.jpg' %}" class="center4"><br>
             <img src="{% static 'img5.jpg' %}" class="center4"><br>
+            <img src="{% static 'img4.jpg' %}" class="center4"><br>
+            <img src="{% static 'img3.jpg' %}" class="center4"><br>
+            <img src="{% static 'img2.jpg' %}" class="center4"><br>
+            <img src="{% static 'img1.jpg' %}" class="center4"><br>
         </div>
     </div>
 
@@ -154,20 +154,20 @@
         </div>
 
         <div class="container">
-            <table>
+            <table style="border: 1px solid white; width:20px; height: 30px">
                 <thead>
                 <tr>
                     <th>Stock A</th>
-                    <th>Stock 2</th>
+                    <th>Stock B</th>
                     <th>Profit</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for key, value in data.items %}
-                    <tr>
-                        <td>{{ key.0 }}</td>
-                        <td>{{ key.1 }}</td>
-                        <td>{{ value }}</td>
+                    <tr style="border: 1px solid white;">
+                        <td style="border: 1px solid white ; width:20px; height: 30px">{{ key.0 }}</td>
+                        <td style="border: 1px solid white ; width:20px; height: 30px">{{ key.1 }}</td>
+                        <td style="border: 1px solid white ; width:20px; height: 30px">{{ value | floatformat:2 }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -179,6 +179,8 @@
 <!--Sponsors section-->
 <div class="sponsors">
     <div class="hideme">
+        <br><br>
+        <br><br>
         <br><br>
         <br><br>
         <br><br>
