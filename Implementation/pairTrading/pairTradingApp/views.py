@@ -5,7 +5,6 @@ from django.shortcuts import render
 
 import pandas as pd
 import numpy as np
-import datetime
 import matplotlib.pyplot as plt
 import seaborn as sns
 # plt.style.use('dark_background')
