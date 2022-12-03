@@ -16,7 +16,7 @@ pd.core.common.is_list_like = pd.api.types.is_list_like
 start = datetime.datetime(2016, 1, 1)
 end = datetime.datetime(2020, 1, 1)
 
-df = pd.read_csv('new_data_with_sectors.csv')
+df = pd.read_csv('../new_data_with_sectors.csv')
 df = df.query("Date >= '2016-01-01'and Date <= '2020-01-01'")
 df = df.pivot(index='Date', columns='Symbol', values='Close')
 df.columns = ["".join(tup) for tup in df.columns.to_flat_index()]
@@ -117,7 +117,7 @@ def visualize(stock1, stock2):
 # visualize('ITC', 'KOTAKBANK')
 
 def read_pickle():
-    dbfile = open(r'./map.pkl', 'rb')
+    dbfile = open(r'../map.pkl', 'rb')
     data = pickle.load(dbfile)
     dbfile.close()
     return data

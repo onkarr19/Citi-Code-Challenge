@@ -11,19 +11,20 @@ import seaborn as sns
 import os
 import glob
 import matplotlib
-matplotlib.use('Agg')
 
+matplotlib.use('Agg')
 
 sns.set(style="whitegrid")
 
 pd.core.common.is_list_like = pd.api.types.is_list_like
 
-df = pd.read_csv('pairTradingApp/new_data_with_sectors.csv')
+df = pd.read_csv('data.csv')
 df = df.query("Date >= '2016-01-01'and Date <= '2020-01-01'")
-df = df.pivot(index ='Date', columns ='Symbol', values = 'Close')
+df = df.pivot(index='Date', columns='Symbol', values='Close')
 df.columns = ["".join(tup) for tup in df.columns.to_flat_index()]
 df.reset_index()
 df.index = pd.to_datetime(df.index, format="%Y/%m/%d")
+
 
 def zscore(series):
     return (series - series.mean()) / np.std(series)
@@ -199,7 +200,7 @@ def visualize(stock1, stock2, start_date='2016-01-01', end_date='2020-01-01'):
 
 
 def read_pickle():
-    dbfile = open(r'pairTradingApp/map.pkl', 'rb')
+    dbfile = open(r'map.pkl', 'rb')
     data = pickle.load(dbfile)
     dbfile.close()
     return data

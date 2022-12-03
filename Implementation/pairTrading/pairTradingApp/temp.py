@@ -2,7 +2,7 @@ import pickle
 
 
 def read_pickle():
-    dbfile = open(r'./map.pkl', 'rb')
+    dbfile = open(r'../map.pkl', 'rb')
     data = pickle.load(dbfile)
     dbfile.close()
     return data
