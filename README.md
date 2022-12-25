@@ -1,6 +1,7 @@
 ## Citi Code Challenge 2022
 ### Pair Trading using Signal Optimizer
 
+
 Objective:
 Design a solution to rank the pair(s) using any desired Indicator.
 Stack ranking will be based on the maximum cumulative profit generated over a defined period (provided in input data).
